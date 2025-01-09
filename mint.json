@@ -25,26 +25,22 @@
     "name": "Get Started",
     "url": "#"
   },
-  "tabs": [
-    {
-      "name": "API Reference",
-      "url": "api-reference"
-    }
-  ],
+ 
 
   "navigation": [
-    {
-      "group": "Get Started",
-      "pages": [
-        "introduction",
-        "quickstart"
-      ]
-    },
+    
   
     {
       "group": "API Documentation",
       "pages": [
         "api-reference/introduction"
+      ]
+    },
+    {
+      "group": "Auth",  
+      "pages": [
+        "api-reference/endpoint/auth/login",
+        "api-reference/endpoint/auth/get-auth"
       ]
     },
     {
