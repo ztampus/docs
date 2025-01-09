@@ -1,29 +1,29 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "DigitalU API",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#6676FF",
+    "light": "#6676FF",
+    "dark": "#6676FF",
     "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+      "from": "#6676FF",
+      "to": "#364BFF"
     }
   },
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "url": "#"
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "name": "Get Started",
+    "url": "#"
   },
   "tabs": [
     {
@@ -31,43 +31,16 @@
       "url": "api-reference"
     }
   ],
-  "anchors": [
-    {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
-    }
-  ],
+
   "navigation": [
     {
       "group": "Get Started",
       "pages": [
         "introduction",
-        "quickstart",
-        "development"
+        "quickstart"
       ]
     },
-    {
-      "group": "Essentials",
-      "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
-      ]
-    },
+  
     {
       "group": "API Documentation",
       "pages": [
@@ -75,14 +48,69 @@
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Generate",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "api-reference/endpoint/generate/create-image",
+        "api-reference/endpoint/generate/create-video",
+        "api-reference/endpoint/generate/get-by-id",
+        "api-reference/endpoint/generate/delete-by-id",
+        "api-reference/endpoint/generate/get-public-by-id",
+        "api-reference/endpoint/generate/get-all",
+        "api-reference/endpoint/generate/get-nobg",
+        "api-reference/endpoint/generate/get-upscaled",
+        "api-reference/endpoint/generate/get-script"
+        
       ]
-    }
+    },
+    {
+      "group": "Video",
+      "pages": [
+        "api-reference/endpoint/video/get-by-id",
+        "api-reference/endpoint/video/delete-by-id",
+        "api-reference/endpoint/video/update-by-id",
+        "api-reference/endpoint/video/get-all",
+        "api-reference/endpoint/video/get-driver-by-id",
+        "api-reference/endpoint/video/delete-driver-by-id",
+        "api-reference/endpoint/video/get-all-drivers"
+      ]
+    },
+    {
+      "group": "Image",
+      "pages": [
+        "api-reference/endpoint/image/get-by-id",
+        "api-reference/endpoint/image/delete-by-id",
+        "api-reference/endpoint/image/update-by-id",
+        "api-reference/endpoint/image/get-all"
+      ]
+    },
+    {
+      "group": "Audio",
+      "pages": [
+        "api-reference/endpoint/audio/get-by-id",
+        "api-reference/endpoint/audio/delete-by-id",
+        "api-reference/endpoint/audio/get-all"
+      ]
+    },
+    {
+      "group": "Voice",
+      "pages": [
+        "api-reference/endpoint/voice/get-by-id",
+        "api-reference/endpoint/voice/delete-by-id",
+        "api-reference/endpoint/voice/update-by-id",
+        "api-reference/endpoint/voice/get-all",
+        "api-reference/endpoint/voice/get-default",
+        "api-reference/endpoint/voice/get-eleven",
+        "api-reference/endpoint/voice/create"
+      ]
+    },
+    {
+      "group": "Speech",
+      "pages": [
+        "api-reference/endpoint/speech/generate"
+      ]
+    } 
   ],
+  
   "footerSocials": {
     "twitter": "https://twitter.com/mintlify",
     "github": "https://github.com/mintlify",
