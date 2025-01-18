@@ -1,0 +1,96 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "DigitalU API",
+        "description": "DigitalU API",
+        "license": {
+            "name": "MIT"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://api.staging.squadz.live"
+        },
+        {
+            "url": "https://squadz.ngrok.app"
+        }
+    ],
+    "security": [
+        {
+            "Authorization": []
+        }
+    ],
+    "paths": {
+        "/upload": {
+            "post": {
+                "tags": ["Utility"],
+                "summary": "Upload file",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "type": "string",
+                                        "example": "0A099B35713fb"
+                                    },
+                                    "uploadfile": {
+                                        "type": "string",
+                                        "format": "binary",
+                                        "description": "File to upload"
+                                    },
+                                    "networkid": {
+                                        "type": "string"
+                                    },
+                                    "channelid": {
+                                        "type": "string"
+                                    },
+                                    "network": {
+                                        "type": "string",
+                                        "example": "videos"
+                                    },
+                                    "channel": {
+                                        "type": "string",
+                                        "example": "##inputvideos"
+                                    }
+                                },
+                                "required": [
+                                    "userid",
+                                    "uploadfile",
+                                    "network",
+                                    "channel"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "File uploaded successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                }
+            }
+        }
+    }
+}

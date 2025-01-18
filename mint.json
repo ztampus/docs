@@ -73,7 +73,7 @@
 
         {
             "group": "Utility",
-            "pages": ["api-reference/endpoint/utility/get-all"]
+            "pages": ["api-reference/endpoint/utility/upload"]
         }
     ],
 
