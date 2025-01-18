@@ -19,7 +19,7 @@
         }
     ],
     "paths": {
-        "/api/avatar/{id}/all": {
+        "/avatar/{id}/all": {
             "get": {
                 "tags": ["Avatar Videos"],
                 "summary": "Get all avatar videos",
@@ -70,7 +70,7 @@
                 }
             }
         },
-        "/api/avatar/{id}/{videoid}": {
+        "/avatar/{id}/{videoid}": {
             "get": {
                 "tags": ["Avatar Video"],
                 "summary": "Get avatar video by id",

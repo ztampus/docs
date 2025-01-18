@@ -19,7 +19,7 @@
         }
     ],
     "paths": {
-        "/api/avatar": {
+        "/avatar": {
             "post": {
                 "tags": ["Avatar"],
                 "summary": "Create avatar",
@@ -61,7 +61,7 @@
                 }
             }
         },
-        "/api/avatar/all": {
+        "/avatar/all": {
             "get": {
                 "tags": ["Avatar"],
                 "summary": "Get all avatars",
@@ -108,7 +108,7 @@
                 }
             }
         },
-        "/api/avatar/{id}": {
+        "/avatar/{id}": {
             "get": {
                 "tags": ["Avatar"],
                 "summary": "Get avatar by id",

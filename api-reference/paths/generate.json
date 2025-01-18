@@ -19,7 +19,7 @@
         }
     ],
     "paths": {
-        "/api/generate/video": {
+        "/generate/video": {
             "post": {
                 "tags": ["Generate"],
                 "summary": "Generate video",
@@ -75,7 +75,7 @@
                 }
             }
         },
-        "/api/generate/{id}": {
+        "/generate/{id}": {
             "get": {
                 "tags": ["Generate"],
                 "summary": "Get generation by ID",
@@ -239,7 +239,7 @@
                 }
             }
         },
-        "/api/generate/all": {
+        "/generate/all": {
             "get": {
                 "tags": ["Generate"],
                 "summary": "Get all generations",
@@ -296,7 +296,7 @@
                 }
             }
         },
-        "/api/generate/public/all": {
+        "/generate/public/all": {
             "get": {
                 "tags": ["Generate"],
                 "summary": "Get all public generations",
@@ -346,7 +346,7 @@
                 }
             }
         },
-        "/api/generate/public/{id}": {
+        "/generate/public/{id}": {
             "get": {
                 "tags": ["Generate"],
                 "summary": "Get public generation by ID",
@@ -363,7 +363,7 @@
                 }
             }
         },
-        "/api/generate/nobg/{id}": {
+        "/generate/nobg/{id}": {
             "get": {
                 "tags": ["Generate"],
                 "summary": "Get generation without background",
@@ -380,7 +380,7 @@
                 }
             }
         },
-        "/api/generate/upscaled/{id}": {
+        "/generate/upscaled/{id}": {
             "get": {
                 "tags": ["Generate"],
                 "summary": "Get upscaled generation",
@@ -397,7 +397,7 @@
                 }
             }
         },
-        "/api/generate/script": {
+        "/generate/script": {
             "get": {
                 "tags": ["Generate"],
                 "summary": "Get generation script",
@@ -406,7 +406,7 @@
                 }
             }
         },
-        "/api/generate/image": {
+        "/generate/image": {
             "post": {
                 "tags": ["Generate"],
                 "summary": "Generate image",
