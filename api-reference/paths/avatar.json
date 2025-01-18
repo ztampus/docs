@@ -10,7 +10,7 @@
     },
     "servers": [
         {
-            "url": "https://squadz.ngrok.app/api"
+            "url": "https://squadz.ngrok.app"
         }
     ],
     "security": [
