@@ -44,7 +44,7 @@
 
                 "api-reference/endpoint/generate/get-all",
 
-                "api-reference/endpoint/generate/update-by-id",
+               
                 "api-reference/endpoint/generate/delete-by-id"
             ]
         },

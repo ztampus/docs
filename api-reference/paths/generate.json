@@ -29,12 +29,35 @@
                         "application/json": {
                             "schema": {
                                 "type": "object",
-
-                                "required": ["videoid"],
-                                "properties": {
-                                    "name": { "type": "string" },
-                                    "text": { "type": "string" },
-                                    "videoid": { "type": "string" }
+                                "required": ["action", "videoid"],
+                                "oneOf": [
+                                    {
+                                        "properties": {
+                                            "action": { 
+                                                "type": "string",
+                                                "enum": ["generate"]
+                                            },
+                                            "name": { "type": "string" },
+                                            "text": { "type": "string" },
+                                            "videoid": { "type": "string" }
+                                        }
+                                    },
+                                    {
+                                        "properties": {
+                                            "action": { 
+                                                "type": "string",
+                                                "enum": ["update"]
+                                            },
+                                            "id": { "type": "string" },
+                                            "name": { "type": "string" },
+                                            "text": { "type": "string" },
+                                            "videoid": { "type": "string" }
+                                        },
+                                        "required": ["id"]
+                                    }
+                                ],
+                                "discriminator": {
+                                    "propertyName": "action"
                                 }
                             }
                         }
