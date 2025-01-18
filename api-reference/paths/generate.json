@@ -29,24 +29,13 @@
                         "application/json": {
                             "schema": {
                                 "type": "object",
-                                "oneOf": [
-                                    {
-                                        "required": ["videourl"],
-                                        "properties": {
-                                            "name": { "type": "string" },
-                                            "text": { "type": "string" },
-                                            "videourl": { "type": "string", "format": "uri" }
-                                        }
-                                    },
-                                    {
-                                        "required": ["videoid"],
-                                        "properties": {
-                                            "name": { "type": "string" },
-                                            "text": { "type": "string" },
-                                            "videoid": { "type": "string" }
-                                        }
-                                    }
-                                ]
+
+                                "required": ["videoid"],
+                                "properties": {
+                                    "name": { "type": "string" },
+                                    "text": { "type": "string" },
+                                    "videoid": { "type": "string" }
+                                }
                             }
                         }
                     }
@@ -66,7 +55,6 @@
                                         "id": {
                                             "type": "string"
                                         }
-                                        
                                     }
                                 }
                             }
