@@ -1,724 +1,405 @@
 {
-  "openapi": "3.0.1",
-  "info": {
-    "title": "DigitalU API",
-    "description": "DigitalU API",
-    "license": {
-      "name": "MIT"
+    "openapi": "3.0.1",
+    "info": {
+        "title": "DigitalU API",
+        "description": "DigitalU API",
+        "license": {
+            "name": "MIT"
+        },
+        "version": "1.0.0"
     },
-    "version": "1.0.0"
-  },
-  "servers": [
-    {
-      "url": "https://svc.staging.squadz.live"
-    }
-  ],
-  "security": [
-    {
-      "Authorization": []
-    }
-  ],
-  "paths": {
-    "/api/generate/{id}": {
-      "get": {
-        "tags": ["Generate"],
-        "summary": "Get generation by ID",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": { "type": "string" }
-          }
-        ],
-        "responses": {
-          "200": { "description": "Success" }
+    "servers": [
+        {
+            "url": "https://svc.staging.squadz.live"
         }
-      },
-      "delete": {
-        "tags": ["Generate"],
-        "summary": "Delete generation by ID",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": { "type": "string" }
-          }
-        ],
-        "responses": {
-          "200": { "description": "Success" }
+    ],
+    "security": [
+        {
+            "Authorization": []
         }
-      }
-    },
-    "/api/generate/public/{id}": {
-      "get": {
-        "tags": ["Generate"],
-        "summary": "Get public generation by ID",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": { "type": "string" }
-          }
-        ],
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      }
-    },
-    "/api/generate/all": {
-      "get": {
-        "tags": ["Generate"],
-        "summary": "Get all generations",
-        "parameters": [
-          {
-            "name": "orderby",
-            "in": "query",
-            "schema": { "type": "string" },
-            "example": "createdate desc"
-          }
-        ],
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      }
-    },
-    "/api/generate/nobg/{id}": {
-      "get": {
-        "tags": ["Generate"],
-        "summary": "Get generation without background",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": { "type": "string" }
-          }
-        ],
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      }
-    },
-    "/api/generate/upscaled/{id}": {
-      "get": {
-        "tags": ["Generate"],
-        "summary": "Get upscaled generation",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": { "type": "string" }
-          }
-        ],
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      }
-    },
-    "/api/generate/script": {
-      "get": {
-        "tags": ["Generate"],
-        "summary": "Get generation script",
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      }
-    },
-    "/api/generate/image": {
-      "post": {
-        "tags": ["Generate"],
-        "summary": "Generate image",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "imageURL": { "type": "string" },
-                  "name": { "type": "string" },
-                  "useVoice": { "type": "string" },
-                  "text": { "type": "string" },
-                  "voiceId": { "type": "string" }
+    ],
+    "paths": {
+       
+        "/api/image/{id}": {
+            "get": {
+                "tags": ["Image"],
+                "summary": "Get image by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" }
+                    }
+                ],
+                "responses": {
+                    "200": { "description": "Success" }
                 }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      }
-    },
-    "/api/generate/video": {
-      "post": {
-        "tags": ["Generate"],
-        "summary": "Generate video",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "name": { "type": "string" },
-                  "usevoice": { "type": "string" },
-                  "text": { "type": "string" },
-                  "videourl": { "type": "string" },
-                  "voiceid": { "type": "string" }
+            },
+            "delete": {
+                "tags": ["Image"],
+                "summary": "Delete image by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" }
+                    }
+                ],
+                "responses": {
+                    "200": { "description": "Success" }
                 }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      }
-    },
-    "/api/image/{id}": {
-      "get": {
-        "tags": ["Image"],
-        "summary": "Get image by ID",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": { "type": "string" }
-          }
-        ],
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      },
-      "delete": {
-        "tags": ["Image"],
-        "summary": "Delete image by ID",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": { "type": "string" }
-          }
-        ],
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      },
-      "patch": {
-        "tags": ["Image"],
-        "summary": "Update image by ID",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": { "type": "string" }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "voiceName": { "type": "string" },
-                  "auth": { "type": "string" }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      }
-    },
-    "/api/image/all": {
-      "get": {
-        "tags": ["Image"],
-        "summary": "Get all images",
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      }
-    },
-    "/api/video/{id}": {
-      "get": {
-        "tags": ["Video"],
-        "summary": "Get video by ID",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": { "type": "string" }
-          }
-        ],
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      },
-      "delete": {
-        "tags": ["Video"],
-        "summary": "Delete video by ID",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": { "type": "string" }
-          }
-        ],
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      },
-      "patch": {
-        "tags": ["Video"],
-        "summary": "Update video by ID",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": { "type": "string" }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "url": { "type": "string" },
-                  "auth": { "type": "string" }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      }
-    },
-    "/api/video/all": {
-      "get": {
-        "tags": ["Video"],
-        "summary": "Get all videos",
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      }
-    },
-    "/api/video/driver/{id}": {
-      "get": {
-        "tags": ["Video"],
-        "summary": "Get driver video by ID",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": { "type": "string" }
-          }
-        ],
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      },
-      "delete": {
-        "tags": ["Video"],
-        "summary": "Delete driver video by ID",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": { "type": "string" }
-          }
-        ],
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      }
-    },
-    "/api/video/driver/all": {
-      "get": {
-        "tags": ["Video"],
-        "summary": "Get all driver videos",
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      }
-    },
-    "/api/audio/{id}": {
-      "get": {
-        "tags": ["Audio"],
-        "summary": "Get audio by ID",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": { "type": "string" }
-          }
-        ],
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      },
-      "delete": {
-        "tags": ["Audio"],
-        "summary": "Delete audio by ID",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": { "type": "string" }
-          }
-        ],
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      }
-    },
-    "/api/audio/all": {
-      "get": {
-        "tags": ["Audio"],
-        "summary": "Get all audio",
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      }
-    },
-    "/api/voice/{id}": {
-      "get": {
-        "tags": ["Voice"],
-        "summary": "Get voice by ID",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": { "type": "string" }
-          }
-        ],
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      },
-      "delete": {
-        "tags": ["Voice"],
-        "summary": "Delete voice by ID",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": { "type": "string" }
-          }
-        ],
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      },
-      "patch": {
-        "tags": ["Voice"],
-        "summary": "Update voice by ID",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": { "type": "string" }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "voiceName": { "type": "string" },
-                  "auth": { "type": "string" }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      }
-    },
-    "/api/voice": {
-      "post": {
-        "tags": ["Voice"],
-        "summary": "Create new voice",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "name": { "type": "string" },
-                  "description": { "type": "string" },
-                  "accent": { "type": "string" },
-                  "age": { "type": "string" },
-                  "usecase": { "type": "string" },
-                  "gender": { "type": "string" },
-                  "fileurl": { "type": "string" }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      }
-    },
-    "/api/voice/all": {
-      "get": {
-        "tags": ["Voice"],
-        "summary": "Get all voices",
-        "parameters": [
-          {
-            "name": "age",
-            "in": "query",
-            "schema": { "type": "string" }
-          }
-        ],
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      }
-    },
-    "/api/voice/default": {
-      "get": {
-        "tags": ["Voice"],
-        "summary": "Get default voice",
-        "parameters": [
-          {
-            "name": "description",
-            "in": "query",
-            "schema": { "type": "string" }
-          }
-        ],
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      }
-    },
-    "/api/voice/eleven": {
-      "get": {
-        "tags": ["Voice"],
-        "summary": "Get Eleven voice",
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      }
-    },
-    "/api/speech": {
-      "post": {
-        "tags": ["Speech"],
-        "summary": "Generate speech from text",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "voiceid": { "type": "string" },
-                  "text": { "type": "string" }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": { "description": "Success" }
-        }
-      }
-    },
-    "/login": {
-      "post": {
-        "tags": ["Auth"],
-        "summary": "Login",
-        "security": [],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "Params": {
-                    "type": "object",
-                    "properties": {
-                      "sys": {
-                        "type": "string",
-                        "default": "auth"
-                      },
-                      "act": {
-                        "type": "string",
-                        "default": "login"
-                      }
-                    },
-                    "required": ["sys", "act"]
-                  },
-                  "Where": {
-                    "type": "object", 
-                    "properties": {
-                      "email": { "type": "string" }
-                    },
-                    "required": ["email"]
-                  }
-                },
-                "required": ["Params", "Where"]
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "result": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "userid": { "type": "string" }
+            },
+            "patch": {
+                "tags": ["Image"],
+                "summary": "Update image by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "voiceName": { "type": "string" }
+                                }
+                            }
                         }
-                      }
                     }
-                  }
+                },
+                "responses": {
+                    "200": { "description": "Success" }
                 }
-              }
             }
-          }
-        }
-      }
-    },
-    "/api/getauth": {
-      "post": {
-        "tags": ["Auth"],
-        "summary": "Get auth",
-        "security": [],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "email": { "type": "string" },
-                  "token": { "type": "string" }
-                }
-              }
-            }
-          }
         },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "authorization": { "type": "string" }
-                    }
-                  }
+        "/api/image/all": {
+            "get": {
+                "tags": ["Image"],
+                "summary": "Get all images",
+                "responses": {
+                    "200": { "description": "Success" }
                 }
-              }
             }
-          }
-        }
-      }
-    }
-  },
-  "components": {
-    "schemas": {
-      "Plant": {
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "description": "The name of the plant",
-            "type": "string"
-          },
-          "tag": {
-            "description": "Tag to specify the type",
-            "type": "string"
-          }
-        }
-      },
-      "NewPlant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Plant"
-          },
-          {
-            "required": [
-              "id"
-            ],
-            "type": "object",
-            "properties": {
-              "id": {
-                "description": "Identification number of the plant",
-                "type": "integer",
-                "format": "int64"
-              }
+        },
+        "/api/video/{id}": {
+            "get": {
+                "tags": ["Video"],
+                "summary": "Get video by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" }
+                    }
+                ],
+                "responses": {
+                    "200": { "description": "Success" }
+                }
+            },
+            "delete": {
+                "tags": ["Video"],
+                "summary": "Delete video by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" }
+                    }
+                ],
+                "responses": {
+                    "200": { "description": "Success" }
+                }
+            },
+            "patch": {
+                "tags": ["Video"],
+                "summary": "Update video by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "url": { "type": "string" }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": { "description": "Success" }
+                }
             }
-          }
-        ]
-      },
-      "Error": {
-        "required": [
-          "error",
-          "message"
-        ],
-        "type": "object",
-        "properties": {
-          "error": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "message": {
-            "type": "string"
-          }
+        },
+        "/api/video/all": {
+            "get": {
+                "tags": ["Video"],
+                "summary": "Get all videos",
+                "responses": {
+                    "200": { "description": "Success" }
+                }
+            }
+        },
+        "/api/video/driver/{id}": {
+            "get": {
+                "tags": ["Video"],
+                "summary": "Get driver video by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" }
+                    }
+                ],
+                "responses": {
+                    "200": { "description": "Success" }
+                }
+            },
+            "delete": {
+                "tags": ["Video"],
+                "summary": "Delete driver video by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" }
+                    }
+                ],
+                "responses": {
+                    "200": { "description": "Success" }
+                }
+            }
+        },
+        "/api/video/driver/all": {
+            "get": {
+                "tags": ["Video"],
+                "summary": "Get all driver videos",
+                "responses": {
+                    "200": { "description": "Success" }
+                }
+            }
+        },
+        "/api/audio/{id}": {
+            "get": {
+                "tags": ["Audio"],
+                "summary": "Get audio by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" }
+                    }
+                ],
+                "responses": {
+                    "200": { "description": "Success" }
+                }
+            },
+            "delete": {
+                "tags": ["Audio"],
+                "summary": "Delete audio by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" }
+                    }
+                ],
+                "responses": {
+                    "200": { "description": "Success" }
+                }
+            }
+        },
+        "/api/audio/all": {
+            "get": {
+                "tags": ["Audio"],
+                "summary": "Get all audio",
+                "responses": {
+                    "200": { "description": "Success" }
+                }
+            }
+        },
+        "/api/voice/{id}": {
+            "get": {
+                "tags": ["Voice"],
+                "summary": "Get voice by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" }
+                    }
+                ],
+                "responses": {
+                    "200": { "description": "Success" }
+                }
+            },
+            "delete": {
+                "tags": ["Voice"],
+                "summary": "Delete voice by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" }
+                    }
+                ],
+                "responses": {
+                    "200": { "description": "Success" }
+                }
+            },
+            "patch": {
+                "tags": ["Voice"],
+                "summary": "Update voice by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "voiceName": { "type": "string" }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": { "description": "Success" }
+                }
+            }
+        },
+        "/api/voice": {
+            "post": {
+                "tags": ["Voice"],
+                "summary": "Create new voice",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": { "type": "string" },
+                                    "description": { "type": "string" },
+                                    "accent": { "type": "string" },
+                                    "age": { "type": "string" },
+                                    "usecase": { "type": "string" },
+                                    "gender": { "type": "string" },
+                                    "fileurl": { "type": "string" }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": { "description": "Success" }
+                }
+            }
+        },
+        "/api/voice/all": {
+            "get": {
+                "tags": ["Voice"],
+                "summary": "Get all voices",
+                "parameters": [
+                    {
+                        "name": "age",
+                        "in": "query",
+                        "schema": { "type": "string" }
+                    }
+                ],
+                "responses": {
+                    "200": { "description": "Success" }
+                }
+            }
+        },
+        "/api/voice/default": {
+            "get": {
+                "tags": ["Voice"],
+                "summary": "Get default voice",
+                "parameters": [
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "schema": { "type": "string" }
+                    }
+                ],
+                "responses": {
+                    "200": { "description": "Success" }
+                }
+            }
+        },
+        "/api/voice/eleven": {
+            "get": {
+                "tags": ["Voice"],
+                "summary": "Get Eleven voice",
+                "responses": {
+                    "200": { "description": "Success" }
+                }
+            }
+        },
+        "/api/speech": {
+            "post": {
+                "tags": ["Speech"],
+                "summary": "Generate speech from text",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "voiceid": { "type": "string" },
+                                    "text": { "type": "string" }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": { "description": "Success" }
+                }
+            }
         }
-      }
     },
-    "securitySchemes": {
-      "bearerAuth": {
-        "type": "http",
-        "scheme": "bearer"
-      }
+    "components": {
+        "securitySchemes": {
+            "Authorization": {
+                "type": "apiKey",
+                "name": "Authorization",
+                "in": "header"
+            }
+        }
     }
-  }
 }

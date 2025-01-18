@@ -1,115 +1,70 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
-  "name": "DigitalU API",
-  "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
-  },
-  "favicon": "/favicon.svg",
-  "colors": {
-    "primary": "#6676FF",
-    "light": "#6676FF",
-    "dark": "#6676FF",
-    "anchors": {
-      "from": "#6676FF",
-      "to": "#364BFF"
-    }
-  },
-  "topbarLinks": [
-    {
-      "name": "Support",
-      "url": "#"
-    }
-  ],
-  "topbarCtaButton": {
-    "name": "Get Started",
-    "url": "#"
-  },
- 
+    "$schema": "https://mintlify.com/schema.json",
+    "name": "DigitalU API",
+    "logo": {
+        "dark": "/logo/dark.svg",
+        "light": "/logo/light.svg"
+    },
+    "favicon": "/favicon.svg",
+    "colors": {
+        "primary": "#6676FF",
+        "light": "#6676FF",
+        "dark": "#6676FF",
+        "anchors": {
+            "from": "#6676FF",
+            "to": "#364BFF"
+        }
+    },
+    "topbarLinks": [
+        {
+            "name": "Support",
+            "url": "#"
+        }
+    ],
+    "topbarCtaButton": {
+        "name": "Get Started",
+        "url": "#"
+    },
 
-  "navigation": [
-    
-  
-    {
-      "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
-      "group": "Auth",  
-      "pages": [
-        "api-reference/endpoint/auth/login",
-        "api-reference/endpoint/auth/get-auth"
-      ]
-    },
-    {
-      "group": "Generate",
-      "pages": [
-        "api-reference/endpoint/generate/create-image",
-        "api-reference/endpoint/generate/create-video",
-        "api-reference/endpoint/generate/get-by-id",
-        "api-reference/endpoint/generate/delete-by-id",
-        "api-reference/endpoint/generate/get-public-by-id",
-        "api-reference/endpoint/generate/get-all",
-        "api-reference/endpoint/generate/get-nobg",
-        "api-reference/endpoint/generate/get-upscaled",
-        "api-reference/endpoint/generate/get-script"
-        
-      ]
-    },
-    {
-      "group": "Video",
-      "pages": [
-        "api-reference/endpoint/video/get-by-id",
-        "api-reference/endpoint/video/delete-by-id",
-        "api-reference/endpoint/video/update-by-id",
-        "api-reference/endpoint/video/get-all",
-        "api-reference/endpoint/video/get-driver-by-id",
-        "api-reference/endpoint/video/delete-driver-by-id",
-        "api-reference/endpoint/video/get-all-drivers"
-      ]
-    },
-    {
-      "group": "Image",
-      "pages": [
-        "api-reference/endpoint/image/get-by-id",
-        "api-reference/endpoint/image/delete-by-id",
-        "api-reference/endpoint/image/update-by-id",
-        "api-reference/endpoint/image/get-all"
-      ]
-    },
-    {
-      "group": "Audio",
-      "pages": [
-        "api-reference/endpoint/audio/get-by-id",
-        "api-reference/endpoint/audio/delete-by-id",
-        "api-reference/endpoint/audio/get-all"
-      ]
-    },
-    {
-      "group": "Voice",
-      "pages": [
-        "api-reference/endpoint/voice/get-by-id",
-        "api-reference/endpoint/voice/delete-by-id",
-        "api-reference/endpoint/voice/update-by-id",
-        "api-reference/endpoint/voice/get-all",
-        "api-reference/endpoint/voice/get-default",
-        "api-reference/endpoint/voice/get-eleven",
-        "api-reference/endpoint/voice/create"
-      ]
-    },
-    {
-      "group": "Speech",
-      "pages": [
-        "api-reference/endpoint/speech/generate"
-      ]
-    } 
-  ],
-  
-  "footerSocials": {
-    "twitter": "https://twitter.com/#",
-    "github": "https://github.com/#",
-    "linkedin": "https://www.linkedin.com/#"
-  }
+    "navigation": [
+        {
+            "group": "API Documentation",
+            "pages": ["api-reference/introduction"]
+        },
+        {
+            "group": "Auth",
+            "pages": ["api-reference/endpoint/auth/login", "api-reference/endpoint/auth/get-auth"]
+        },
+        {
+            "group": "Generate",
+            "pages": [
+                "api-reference/endpoint/generate/create-video",
+
+                "api-reference/endpoint/generate/get-by-id",
+
+                "api-reference/endpoint/generate/get-all",
+              
+                "api-reference/endpoint/generate/update-by-id",
+                "api-reference/endpoint/generate/delete-by-id"
+            ]
+        },
+        {
+            "group": "Video",
+            "pages": [
+                "api-reference/endpoint/video/get-by-id",
+                "api-reference/endpoint/video/delete-by-id",
+                "api-reference/endpoint/video/update-by-id",
+                "api-reference/endpoint/video/get-all",
+                "api-reference/endpoint/video/get-driver-by-id",
+                "api-reference/endpoint/video/delete-driver-by-id",
+                "api-reference/endpoint/video/get-all-drivers"
+            ]
+        }
+    ],
+
+    "footerSocials": {
+        "twitter": "https://twitter.com/#",
+        "github": "https://github.com/#",
+        "linkedin": "https://www.linkedin.com/#"
+    }
 }

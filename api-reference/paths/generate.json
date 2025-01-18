@@ -1,0 +1,445 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "DigitalU API",
+        "description": "DigitalU API",
+        "license": {
+            "name": "MIT"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://squadz.ngrok.app/api"
+        }
+    ],
+    "security": [
+        {
+            "Authorization": []
+        }
+    ],
+    "paths": {
+        "/api/generate/video": {
+            "post": {
+                "tags": ["Generate"],
+                "summary": "Generate video",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "oneOf": [
+                                    {
+                                        "required": ["videourl"],
+                                        "properties": {
+                                            "name": { "type": "string" },
+                                            "text": { "type": "string" },
+                                            "videourl": { "type": "string", "format": "uri" }
+                                        }
+                                    },
+                                    {
+                                        "required": ["videoid"],
+                                        "properties": {
+                                            "name": { "type": "string" },
+                                            "text": { "type": "string" },
+                                            "videoid": { "type": "string" }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "createdate": {
+                                            "type": "string",
+                                            "format": "date-time"
+                                        },
+                                        "id": {
+                                            "type": "string"
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/generate/{id}": {
+            "get": {
+                "tags": ["Generate"],
+                "summary": "Get generation by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "createdate": {
+                                            "type": "string",
+                                            "format": "date-time"
+                                        },
+                                        "result": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "state": {
+                                            "type": "string",
+                                            "enum": ["completed", "processing", "failed"]
+                                        },
+                                        "text": {
+                                            "type": "string"
+                                        },
+                                        "public": {
+                                            "type": "string",
+                                            "enum": ["true", "false"]
+                                        },
+                                        "upscaled": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "nobg": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Generate"],
+                "summary": "Delete generation by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": ["Generate"],
+                "summary": "Update generation by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "createdate": {
+                                        "type": "string",
+                                        "format": "date-time"
+                                    },
+                                    "result": {
+                                        "type": "string",
+                                        "format": "uri"
+                                    },
+                                    "state": {
+                                        "type": "string",
+                                        "enum": ["completed", "processing", "failed"]
+                                    },
+                                    "text": {
+                                        "type": "string"
+                                    },
+                                    "public": {
+                                        "type": "string",
+                                        "enum": ["true", "false"]
+                                    },
+                                    "upscaled": {
+                                        "type": "string",
+                                        "format": "uri"
+                                    },
+                                    "nobg": {
+                                        "type": "string",
+                                        "format": "uri"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/generate/all": {
+            "get": {
+                "tags": ["Generate"],
+                "summary": "Get all generations",
+                "parameters": [
+                    {
+                        "name": "public",
+                        "in": "query",
+                        "required": false,
+                        "schema": { "type": "string" },
+                        "example": "true"
+                    },
+                    {
+                        "name": "orderby",
+                        "in": "query",
+                        "required": false,
+                        "schema": { "type": "string" },
+                        "example": "createdate desc"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "createdate": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "id": {
+                                                "type": "string"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "result": {
+                                                "type": "string",
+                                                "format": "uri"
+                                            },
+                                            "state": {
+                                                "type": "string",
+                                                "enum": ["complete", "processing", "failed"]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/generate/public/all": {
+            "get": {
+                "tags": ["Generate"],
+                "summary": "Get all public generations",
+                "parameters": [
+                    {
+                        "name": "orderby",
+                        "in": "query",
+                        "required": false,
+                        "schema": { "type": "string" },
+                        "example": "createdate desc"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "createdate": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "id": {
+                                                "type": "string"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "result": {
+                                                "type": "string",
+                                                "format": "uri"
+                                            },
+                                            "state": {
+                                                "type": "string",
+                                                "enum": ["complete", "processing", "failed"]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/generate/public/{id}": {
+            "get": {
+                "tags": ["Generate"],
+                "summary": "Get public generation by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" }
+                    }
+                ],
+                "responses": {
+                    "200": { "description": "Success" }
+                }
+            }
+        },
+        "/api/generate/nobg/{id}": {
+            "get": {
+                "tags": ["Generate"],
+                "summary": "Get generation without background",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" }
+                    }
+                ],
+                "responses": {
+                    "200": { "description": "Success" }
+                }
+            }
+        },
+        "/api/generate/upscaled/{id}": {
+            "get": {
+                "tags": ["Generate"],
+                "summary": "Get upscaled generation",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" }
+                    }
+                ],
+                "responses": {
+                    "200": { "description": "Success" }
+                }
+            }
+        },
+        "/api/generate/script": {
+            "get": {
+                "tags": ["Generate"],
+                "summary": "Get generation script",
+                "responses": {
+                    "200": { "description": "Success" }
+                }
+            }
+        },
+        "/api/generate/image": {
+            "post": {
+                "tags": ["Generate"],
+                "summary": "Generate image",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "imageURL": { "type": "string" },
+                                    "name": { "type": "string" },
+                                    "useVoice": { "type": "string" },
+                                    "text": { "type": "string" },
+                                    "voiceId": { "type": "string" }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": { "description": "Success" }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "Authorization": {
+                "type": "apiKey",
+                "name": "Authorization",
+                "in": "header"
+            }
+        }
+    }
+}
