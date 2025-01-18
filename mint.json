@@ -43,22 +43,37 @@
                 "api-reference/endpoint/generate/get-by-id",
 
                 "api-reference/endpoint/generate/get-all",
-              
+
                 "api-reference/endpoint/generate/update-by-id",
                 "api-reference/endpoint/generate/delete-by-id"
             ]
         },
         {
-            "group": "Video",
+            "group": "Avatar",
             "pages": [
-                "api-reference/endpoint/video/get-by-id",
-                "api-reference/endpoint/video/delete-by-id",
-                "api-reference/endpoint/video/update-by-id",
-                "api-reference/endpoint/video/get-all",
-                "api-reference/endpoint/video/get-driver-by-id",
-                "api-reference/endpoint/video/delete-driver-by-id",
-                "api-reference/endpoint/video/get-all-drivers"
+                "api-reference/endpoint/avatar/create-avatar",
+                "api-reference/endpoint/avatar/get-by-id",
+                "api-reference/endpoint/avatar/get-all",
+
+                "api-reference/endpoint/avatar/update-by-id",
+                "api-reference/endpoint/avatar/delete-by-id"
             ]
+        },
+        {
+            "group": "Avatar Video",
+            "pages": [
+                "api-reference/endpoint/avatar-video/add-avatar-video", 
+                "api-reference/endpoint/avatar-video/get-video-by-id",
+                "api-reference/endpoint/avatar-video/get-all",
+               
+                "api-reference/endpoint/avatar-video/update-by-id",
+                "api-reference/endpoint/avatar-video/delete-by-id"
+            ]
+        },
+
+        {
+            "group": "Utility",
+            "pages": ["api-reference/endpoint/utility/get-all"]
         }
     ],
 
