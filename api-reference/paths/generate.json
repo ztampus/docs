@@ -35,7 +35,7 @@
                                         "properties": {
                                             "action": { 
                                                 "type": "string",
-                                                "enum": ["generate"]
+                                                "enum": ["create"]
                                             },
                                             "name": { "type": "string" },
                                             "text": { "type": "string" },

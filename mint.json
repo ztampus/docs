@@ -55,18 +55,16 @@
                 "api-reference/endpoint/avatar/get-by-id",
                 "api-reference/endpoint/avatar/get-all",
 
-                "api-reference/endpoint/avatar/update-by-id",
+              
                 "api-reference/endpoint/avatar/delete-by-id"
             ]
         },
         {
             "group": "Avatar Video",
             "pages": [
-                "api-reference/endpoint/avatar-video/add-avatar-video", 
+                
                 "api-reference/endpoint/avatar-video/get-video-by-id",
                 "api-reference/endpoint/avatar-video/get-all",
-               
-                "api-reference/endpoint/avatar-video/update-by-id",
                 "api-reference/endpoint/avatar-video/delete-by-id"
             ]
         },

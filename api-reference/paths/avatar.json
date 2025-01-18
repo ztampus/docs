@@ -29,10 +29,42 @@
                         "application/json": {
                             "schema": {
                                 "type": "object",
-                                "properties": {
-                                    "name": {
-                                        "type": "string"
+                                "required": ["action", "videoid"],
+                                "oneOf": [
+                                    {
+                                        "properties": {
+                                            "action": {
+                                                "type": "string",
+                                                "enum": ["create"]
+                                            },
+                                            "name": { "type": "string" }
+                                        }
+                                    },
+                                    {
+                                        "properties": {
+                                            "action": {
+                                                "type": "string",
+                                                "enum": ["update"]
+                                            },
+                                            "id": { "type": "string" },
+                                            "name": { "type": "string" }
+                                        },
+                                        "required": ["id"]
+                                    },
+                                    {
+                                        "properties": {
+                                            "action": {
+                                                "type": "string",
+                                                "enum": ["add-video"]
+                                            },
+                                            "id": { "type": "string" },
+                                            "url": { "type": "string", "format": "uri" }
+                                        },
+                                        "required": ["id", "url"]
                                     }
+                                ],
+                                "discriminator": {
+                                    "propertyName": "action"
                                 }
                             }
                         }
@@ -44,16 +76,37 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "createdate": {
-                                            "type": "string",
-                                            "format": "date-time"
+                                    "oneOf": [
+                                        {
+                                            "description": "Response for 'create' action",
+                                            "type": "object",
+                                            "properties": {
+                                                "id": { "type": "string" },
+                                                "createdate": {
+                                                    "type": "string",
+                                                    "format": "date-time"
+                                                }
+                                            }
                                         },
-                                        "id": {
-                                            "type": "string"
+                                        {
+                                            "description": "Response for 'update' action",
+                                            "type": "object",
+                                            "properties": {
+                                                "id": { "type": "string" }
+                                            }
+                                        },
+                                        {
+                                            "description": "Response for 'add-video' action",
+                                            "type": "object",
+                                            "properties": {
+                                                "createdate": {
+                                                    "type": "string",
+                                                    "format": "date-time"
+                                                },
+                                                "videoid": { "type": "string" }
+                                            }
                                         }
-                                    }
+                                    ]
                                 }
                             }
                         }
@@ -333,7 +386,6 @@
                                     "type": "object",
                                     "properties": {
                                         "id": { "type": "string" }
-                                        
                                     }
                                 }
                             }
