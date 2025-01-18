@@ -19,7 +19,7 @@
         }
     ],
     "paths": {
-        "/generate/video": {
+        "/generate": {
             "post": {
                 "tags": ["Generate"],
                 "summary": "Generate video",
@@ -227,6 +227,7 @@
                 }
             }
         },
+
         "/generate/all": {
             "get": {
                 "tags": ["Generate"],
@@ -417,6 +418,104 @@
                 },
                 "responses": {
                     "200": { "description": "Success" }
+                }
+            }
+        },
+
+
+        "/generate/delete/{id}": {
+            "get": {
+                "tags": ["Generate"],
+                "summary": "Delete generation by ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/generate/update": {
+            "post": {
+                "tags": ["Generate"],
+                "summary": "Update generation by ID",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                  
+                                    "result": {
+                                        "type": "string",
+                                        "format": "uri"
+                                    },
+                                    "state": {
+                                        "type": "string",
+                                        "enum": ["completed", "processing", "failed"]
+                                    },
+                                    "text": {
+                                        "type": "string"
+                                    },
+                                    "public": {
+                                        "type": "string",
+                                        "enum": ["true", "false"]
+                                    },
+                                    "upscaled": {
+                                        "type": "string",
+                                        "format": "uri"
+                                    },
+                                    "nobg": {
+                                        "type": "string",
+                                        "format": "uri"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
