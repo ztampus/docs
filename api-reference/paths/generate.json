@@ -71,12 +71,20 @@
                                 "schema": {
                                     "type": "object",
                                     "properties": {
-                                        "createdate": {
-                                            "type": "string",
-                                            "format": "date-time"
-                                        },
-                                        "id": {
-                                            "type": "string"
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "createdate": {
+                                                        "type": "string",
+                                                        "format": "date-time"
+                                                    },
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -106,38 +114,46 @@
                                 "schema": {
                                     "type": "object",
                                     "properties": {
-                                        "id": {
-                                            "type": "string"
-                                        },
-                                        "name": {
-                                            "type": "string"
-                                        },
-                                        "createdate": {
-                                            "type": "string",
-                                            "format": "date-time"
-                                        },
                                         "result": {
-                                            "type": "string",
-                                            "format": "uri"
-                                        },
-                                        "state": {
-                                            "type": "string",
-                                            "enum": ["completed", "processing", "failed"]
-                                        },
-                                        "text": {
-                                            "type": "string"
-                                        },
-                                        "public": {
-                                            "type": "string",
-                                            "enum": ["true", "false"]
-                                        },
-                                        "upscaled": {
-                                            "type": "string",
-                                            "format": "uri"
-                                        },
-                                        "nobg": {
-                                            "type": "string",
-                                            "format": "uri"
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "createdate": {
+                                                        "type": "string",
+                                                        "format": "date-time"
+                                                    },
+                                                    "result": {
+                                                        "type": "string",
+                                                        "format": "uri"
+                                                    },
+                                                    "state": {
+                                                        "type": "string",
+                                                        "enum": ["completed", "processing", "failed"]
+                                                    },
+                                                    "text": {
+                                                        "type": "string"
+                                                    },
+                                                    "public": {
+                                                        "type": "string",
+                                                        "enum": ["true", "false"]
+                                                    },
+                                                    "upscaled": {
+                                                        "type": "string",
+                                                        "format": "uri"
+                                                    },
+                                                    "nobg": {
+                                                        "type": "string",
+                                                        "format": "uri"
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -165,8 +181,16 @@
                                 "schema": {
                                     "type": "object",
                                     "properties": {
-                                        "id": {
-                                            "type": "string"
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -239,8 +263,16 @@
                                 "schema": {
                                     "type": "object",
                                     "properties": {
-                                        "id": {
-                                            "type": "string"
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -277,27 +309,32 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "createdate": {
-                                                "type": "string",
-                                                "format": "date-time"
-                                            },
-                                            "id": {
-                                                "type": "string"
-                                            },
-                                            "name": {
-                                                "type": "string"
-                                            },
-                                            "result": {
-                                                "type": "string",
-                                                "format": "uri"
-                                            },
-                                            "state": {
-                                                "type": "string",
-                                                "enum": ["complete", "processing", "failed"]
+                                    "type": "object",
+                                    "properties": {
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "createdate": {
+                                                        "type": "string",
+                                                        "format": "date-time"
+                                                    },
+                                                    "id": {
+                                                        "type": "string"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "result": {
+                                                        "type": "string",
+                                                        "format": "uri"
+                                                    },
+                                                    "state": {
+                                                        "type": "string",
+                                                        "enum": ["complete", "processing", "failed"]
+                                                    }
+                                                }
                                             }
                                         }
                                     }
@@ -327,27 +364,32 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "createdate": {
-                                                "type": "string",
-                                                "format": "date-time"
-                                            },
-                                            "id": {
-                                                "type": "string"
-                                            },
-                                            "name": {
-                                                "type": "string"
-                                            },
-                                            "result": {
-                                                "type": "string",
-                                                "format": "uri"
-                                            },
-                                            "state": {
-                                                "type": "string",
-                                                "enum": ["complete", "processing", "failed"]
+                                    "type": "object",
+                                    "properties": {
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "createdate": {
+                                                        "type": "string",
+                                                        "format": "date-time"
+                                                    },
+                                                    "id": {
+                                                        "type": "string"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "result": {
+                                                        "type": "string",
+                                                        "format": "uri"
+                                                    },
+                                                    "state": {
+                                                        "type": "string",
+                                                        "enum": ["complete", "processing", "failed"]
+                                                    }
+                                                }
                                             }
                                         }
                                     }
@@ -371,7 +413,29 @@
                     }
                 ],
                 "responses": {
-                    "200": { "description": "Success" }
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -388,7 +452,29 @@
                     }
                 ],
                 "responses": {
-                    "200": { "description": "Success" }
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -405,7 +491,29 @@
                     }
                 ],
                 "responses": {
-                    "200": { "description": "Success" }
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -414,7 +522,29 @@
                 "tags": ["Generate"],
                 "summary": "Get generation script",
                 "responses": {
-                    "200": { "description": "Success" }
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "script": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -440,7 +570,29 @@
                     }
                 },
                 "responses": {
-                    "200": { "description": "Success" }
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -466,8 +618,16 @@
                                 "schema": {
                                     "type": "object",
                                     "properties": {
-                                        "id": {
-                                            "type": "string"
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -531,8 +691,16 @@
                                 "schema": {
                                     "type": "object",
                                     "properties": {
-                                        "id": {
-                                            "type": "string"
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }

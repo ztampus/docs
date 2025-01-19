@@ -66,27 +66,34 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "oneOf": [
-                                        {
-                                            "description": "Response for 'create' action",
-                                            "type": "object",
-                                            "properties": {
-                                                "id": { "type": "string" },
-                                                "createdate": {
-                                                    "type": "string",
-                                                    "format": "date-time"
-                                                }
-                                            }
-                                        },
-                                        {
-                                            "description": "Response for 'update' action",
-                                            "type": "object",
-                                            "properties": {
-                                                "id": { "type": "string" }
+                                    "type": "object",
+                                    "properties": {
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "oneOf": [
+                                                    {
+                                                        "description": "Response for 'create' action",
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "id": { "type": "string" },
+                                                            "createdate": {
+                                                                "type": "string",
+                                                                "format": "date-time"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "description": "Response for 'update' action",
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "id": { "type": "string" }
+                                                        }
+                                                    }
+                                                ]
                                             }
                                         }
-                                        
-                                    ]
+                                    }
                                 }
                             }
                         }
@@ -113,24 +120,29 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "createdate": {
-                                                "type": "string",
-                                                "format": "date-time"
-                                            },
-                                            "id": {
-                                                "type": "string"
-                                            },
-                                            "name": {
-                                                "type": "string"
-                                            },
-                                            "videos": {
-                                                "type": "string",
-                                                "format": "integer",
-                                                "description": "Length of videos"
+                                    "type": "object",
+                                    "properties": {
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "createdate": {
+                                                        "type": "string",
+                                                        "format": "date-time"
+                                                    },
+                                                    "id": {
+                                                        "type": "string"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "videos": {
+                                                        "type": "string",
+                                                        "format": "integer",
+                                                        "description": "Length of videos"
+                                                    }
+                                                }
                                             }
                                         }
                                     }
@@ -161,22 +173,29 @@
                             "application/json": {
                                 "schema": {
                                     "type": "object",
-
                                     "properties": {
-                                        "createdate": {
-                                            "type": "string",
-                                            "format": "date-time"
-                                        },
-                                        "id": {
-                                            "type": "string"
-                                        },
-                                        "name": {
-                                            "type": "string"
-                                        },
-                                        "videos": {
-                                            "type": "string",
-                                            "format": "integer",
-                                            "description": "Length of videos"
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "createdate": {
+                                                        "type": "string",
+                                                        "format": "date-time"
+                                                    },
+                                                    "id": {
+                                                        "type": "string"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "videos": {
+                                                        "type": "string",
+                                                        "format": "integer",
+                                                        "description": "Length of videos"
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -205,8 +224,16 @@
                                 "schema": {
                                     "type": "object",
                                     "properties": {
-                                        "id": {
-                                            "type": "string"
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -250,8 +277,16 @@
                                 "schema": {
                                     "type": "object",
                                     "properties": {
-                                        "id": {
-                                            "type": "string"
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -260,7 +295,6 @@
                     }
                 }
             },
-
             "post": {
                 "tags": ["Avatar Video"],
                 "summary": "Add avatar video",
@@ -296,7 +330,15 @@
                                 "schema": {
                                     "type": "object",
                                     "properties": {
-                                        "videoid": { "type": "string" }
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "videoid": { "type": "string" }
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -326,8 +368,16 @@
                                 "schema": {
                                     "type": "object",
                                     "properties": {
-                                        "id": {
-                                            "type": "string"
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -341,7 +391,6 @@
             "post": {
                 "tags": ["Avatar"],
                 "summary": "Update avatar by id",
-
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -365,7 +414,17 @@
                                 "schema": {
                                     "type": "object",
                                     "properties": {
-                                        "id": { "type": "string" }
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }

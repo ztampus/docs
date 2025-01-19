@@ -66,27 +66,34 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "oneOf": [
-                                        {
-                                            "description": "Response for 'create' action",
-                                            "type": "object",
-                                            "properties": {
-                                                "audioid": { "type": "string" },
-                                                "createdate": {
-                                                    "type": "string",
-                                                    "format": "date-time"
-                                                }
-                                            }
-                                        },
-                                        {
-                                            "description": "Response for 'update' action",
-                                            "type": "object",
-                                            "properties": {
-                                                "audioid": { "type": "string" }
+                                    "type": "object",
+                                    "properties": {
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "oneOf": [
+                                                    {
+                                                        "description": "Response for 'create' action",
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "audioid": { "type": "string" },
+                                                            "createdate": {
+                                                                "type": "string",
+                                                                "format": "date-time"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "description": "Response for 'update' action",
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "audioid": { "type": "string" }
+                                                        }
+                                                    }
+                                                ]
                                             }
                                         }
-                                       
-                                    ]
+                                    }
                                 }
                             }
                         }
@@ -120,21 +127,25 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "createdate": {
-                                                "type": "string",
-                                                "format": "date-time"
-                                            },
-                                            "audioid": {
-                                                "type": "string"
-                                            },
-
-                                            "url": {
-                                                "type": "string",
-                                                "format": "uri"
+                                    "type": "object",
+                                    "properties": {
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "createdate": {
+                                                        "type": "string",
+                                                        "format": "date-time"
+                                                    },
+                                                    "audioid": {
+                                                        "type": "string"
+                                                    },
+                                                    "url": {
+                                                        "type": "string",
+                                                        "format": "uri"
+                                                    }
+                                                }
                                             }
                                         }
                                     }
@@ -173,16 +184,24 @@
                                 "schema": {
                                     "type": "object",
                                     "properties": {
-                                        "createdate": {
-                                            "type": "string",
-                                            "format": "date-time"
-                                        },
-                                        "audioid": {
-                                            "type": "string"
-                                        },
-                                        "url": {
-                                            "type": "string",
-                                            "format": "uri"
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "createdate": {
+                                                        "type": "string",
+                                                        "format": "date-time"
+                                                    },
+                                                    "audioid": {
+                                                        "type": "string"
+                                                    },
+                                                    "url": {
+                                                        "type": "string",
+                                                        "format": "uri"
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -211,8 +230,16 @@
                                 "schema": {
                                     "type": "object",
                                     "properties": {
-                                        "id": {
-                                            "type": "string"
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -256,8 +283,16 @@
                                 "schema": {
                                     "type": "object",
                                     "properties": {
-                                        "id": {
-                                            "type": "string"
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -295,8 +330,16 @@
                                 "schema": {
                                     "type": "object",
                                     "properties": {
-                                        "id": {
-                                            "type": "string"
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -340,7 +383,15 @@
                                 "schema": {
                                     "type": "object",
                                     "properties": {
-                                        "audioid": { "type": "string" }
+                                        "result": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "audioid": { "type": "string" }
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
