@@ -19,17 +19,17 @@
         }
     ],
     "paths": {
-        "/avatarvideo": {
+        "/avataraudio": {
             "post": {
-                "tags": ["Avatar Video"],
-                "summary": "Create avatar video",
+                "tags": ["Avatar Audio"],
+                "summary": "Create avatar audio",
                 "requestBody": {
                     "required": true,
                     "content": {
                         "application/json": {
                             "schema": {
                                 "type": "object",
-                                "required": ["action", "videoid"],
+                                    "required": ["action", "audioid"],
                                 "oneOf": [
                                     {
                                         "properties": {
@@ -71,7 +71,7 @@
                                             "description": "Response for 'create' action",
                                             "type": "object",
                                             "properties": {
-                                                "videoid": { "type": "string" },
+                                                "audioid": { "type": "string" },
                                                 "createdate": {
                                                     "type": "string",
                                                     "format": "date-time"
@@ -82,7 +82,7 @@
                                             "description": "Response for 'update' action",
                                             "type": "object",
                                             "properties": {
-                                                "videoid": { "type": "string" }
+                                                "audioid": { "type": "string" }
                                             }
                                         }
                                        
@@ -94,10 +94,10 @@
                 }
             }
         },
-        "/avatarvideo/{id}/all": {
+        "/avataraudio/{id}/all": {
             "get": {
-                "tags": ["Avatar Videos"],
-                "summary": "Get all avatar videos",
+                "tags": ["Avatar Audio"],
+                "summary": "Get all avatar audio",
                 "parameters": [
                     {
                         "name": "id",
@@ -128,7 +128,7 @@
                                                 "type": "string",
                                                 "format": "date-time"
                                             },
-                                            "videoid": {
+                                            "audioid": {
                                                 "type": "string"
                                             },
 
@@ -145,10 +145,10 @@
                 }
             }
         },
-        "/avatarvideo/{id}/{videoid}": {
+        "/avataraudio/{id}/{audioid}": {
             "get": {
-                "tags": ["Avatar Video"],
-                "summary": "Get avatar video by id",
+                "tags": ["Avatar Audio"],
+                "summary": "Get avatar audio by id",
                 "parameters": [
                     {
                         "name": "id",
@@ -158,7 +158,7 @@
                         "example": "123"
                     },
                     {
-                        "name": "videoid",
+                        "name": "audioid",
                         "in": "path",
                         "required": true,
                         "schema": { "type": "string" },
@@ -177,7 +177,7 @@
                                             "type": "string",
                                             "format": "date-time"
                                         },
-                                        "videoid": {
+                                        "audioid": {
                                             "type": "string"
                                         },
                                         "url": {
@@ -192,8 +192,8 @@
                 }
             },
             "delete": {
-                "tags": ["Avatar Video"],
-                "summary": "Delete avatar video by id",
+                "tags": ["Avatar Audio"],
+                "summary": "Delete avatar audio by id",
                 "parameters": [
                     {
                         "name": "id",
@@ -222,8 +222,8 @@
                 }
             },
             "patch": {
-                "tags": ["Avatar Video"],
-                "summary": "Update avatar video by id",
+                "tags": ["Avatar Audio"],
+                "summary": "Update avatar audio by id",
                 "parameters": [
                     {
                         "name": "id",
@@ -267,10 +267,10 @@
                 }
             }
         },
-        "/avatarvideo/{id}/delete/{videoid}": {
+        "/avataraudio/{id}/delete/{audioid}": {
             "get": {
-                "tags": ["Avatar Video"],
-                "summary": "Delete avatar video by id",
+                "tags": ["Avatar Audio"],
+                "summary": "Delete avatar audio by id",
                 "parameters": [
                     {
                         "name": "id",
@@ -280,7 +280,7 @@
                         "example": "123"
                     },
                     {
-                        "name": "videoid",
+                        "name": "audioid",
                         "in": "path",
                         "required": true,
                         "schema": { "type": "string" },
@@ -306,10 +306,10 @@
                 }
             }
         },
-        "/avatarvideo/video/update": {
+        "/avataraudio/audio/update": {
             "post": {
-                "tags": ["Avatar Video"],
-                "summary": "Update avatar video by id",
+                "tags": ["Avatar Audio"],
+                "summary": "Update avatar audio by id",
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -320,7 +320,7 @@
                                     "id": {
                                         "type": "string"
                                     },
-                                    "videoid": {
+                                    "audioid": {
                                         "type": "string"
                                     },
                                     "url": {
@@ -340,7 +340,7 @@
                                 "schema": {
                                     "type": "object",
                                     "properties": {
-                                        "id": { "type": "string" }
+                                        "audioid": { "type": "string" }
                                     }
                                 }
                             }
