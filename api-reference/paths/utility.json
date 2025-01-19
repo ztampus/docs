@@ -21,9 +21,24 @@
             "Authorization": []
         }
     ],
+    "components": {
+        "securitySchemes": {
+            "Authorization": {
+                "type": "apiKey",
+                "name": "Authorization",
+                "in": "header"
+                
+            }
+        }
+    },
     "paths": {
-        "/upload": {
+        "/upload/": {
             "post": {
+                "security": [
+                    {
+                        "Authorization": []
+                    }
+                ],
                 "tags": ["Utility"],
                 "summary": "Upload file",
                 "requestBody": {
@@ -58,10 +73,9 @@
                                     }
                                 },
                                 "required": [
-                                    "userid",
-                                    "uploadfile",
-                                    "network",
-                                    "channel"
+                             
+                                    "uploadfile"
+                                    
                                 ]
                             }
                         }
