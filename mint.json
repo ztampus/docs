@@ -51,12 +51,12 @@
         {
             "group": "Avatar",
             "pages": [
-                "api-reference/endpoint/avatars/create-avatar",
-                "api-reference/endpoint/avatars/get-by-id",
-                "api-reference/endpoint/avatars/get-all",
+                "api-reference/endpoint/avatar/create",
+                "api-reference/endpoint/avatar/get-by-id",
+                "api-reference/endpoint/avatar/get-all",
 
               
-                "api-reference/endpoint/avatars/delete-by-id"
+                "api-reference/endpoint/avatar/delete-by-id"
             ]
         },
         {

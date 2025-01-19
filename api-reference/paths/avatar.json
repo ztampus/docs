@@ -50,18 +50,8 @@
                                             "name": { "type": "string" }
                                         },
                                         "required": ["id"]
-                                    },
-                                    {
-                                        "properties": {
-                                            "action": {
-                                                "type": "string",
-                                                "enum": ["add-video"]
-                                            },
-                                            "id": { "type": "string" },
-                                            "url": { "type": "string", "format": "uri" }
-                                        },
-                                        "required": ["id", "url"]
                                     }
+                                  
                                 ],
                                 "discriminator": {
                                     "propertyName": "action"
@@ -94,18 +84,8 @@
                                             "properties": {
                                                 "id": { "type": "string" }
                                             }
-                                        },
-                                        {
-                                            "description": "Response for 'add-video' action",
-                                            "type": "object",
-                                            "properties": {
-                                                "createdate": {
-                                                    "type": "string",
-                                                    "format": "date-time"
-                                                },
-                                                "videoid": { "type": "string" }
-                                            }
                                         }
+                                        
                                     ]
                                 }
                             }
