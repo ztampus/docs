@@ -10,9 +10,6 @@
     },
     "servers": [
         {
-            "url": "https://svc.staging.squadz.live"
-        },
-        {
             "url": "https://squadz.ngrok.app"
         }
     ],
@@ -21,24 +18,10 @@
             "Authorization": []
         }
     ],
-    "components": {
-        "securitySchemes": {
-            "Authorization": {
-                "type": "apiKey",
-                "name": "Authorization",
-                "in": "header"
-                
-            }
-        }
-    },
+
     "paths": {
         "/upload/": {
             "post": {
-                "security": [
-                    {
-                        "Authorization": []
-                    }
-                ],
                 "tags": ["Utility"],
                 "summary": "Upload file",
                 "requestBody": {
@@ -57,26 +40,19 @@
                                         "format": "binary",
                                         "description": "File to upload"
                                     },
-                                    "networkid": {
+                                    "directory": {
                                         "type": "string"
                                     },
-                                    "channelid": {
-                                        "type": "string"
-                                    },
-                                    "network": {
+                                    "newfilename": {
                                         "type": "string",
-                                        "example": "videos"
+                                        "description": "New name for the uploaded file"
                                     },
-                                    "channel": {
+                                    "api": {
                                         "type": "string",
-                                        "example": "##inputvideos"
+                                        "description": "API identifier"
                                     }
                                 },
-                                "required": [
-                             
-                                    "uploadfile"
-                                    
-                                ]
+                                "required": ["uploadfile"]
                             }
                         }
                     }
@@ -87,13 +63,22 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "success": {
-                                            "type": "boolean"
-                                        },
-                                        "message": {
-                                            "type": "string"
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "string",
+                                                "example": "P0J1gX0667425"
+                                            },
+                                            "key": {
+                                                "type": "string",
+                                                "example": "11/_video/heart/ages.mp4"
+                                            },
+                                            "url": {
+                                                "type": "string",
+                                                "example": "https://squadz.ngrok.app/download/11/_video/heart/ages.mp4"
+                                            }
                                         }
                                     }
                                 }

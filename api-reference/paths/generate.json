@@ -98,13 +98,22 @@
             "get": {
                 "tags": ["Generate"],
                 "summary": "Get generation by ID",
+                "security": [],
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
                         "required": true,
                         "schema": { "type": "string" }
+                    },
+                    {
+                        "name": "auth",
+                        "in": "query",
+                        "required": true,
+                        "schema": { "type": "string" },
+                        "description": "API key for authentication"
                     }
+                  
                 ],
                 "responses": {
                     "200": {
@@ -287,6 +296,7 @@
             "get": {
                 "tags": ["Generate"],
                 "summary": "Get all generations",
+                "security": [],
                 "parameters": [
                     {
                         "name": "public",
@@ -301,6 +311,13 @@
                         "required": false,
                         "schema": { "type": "string" },
                         "example": "createdate desc"
+                    },
+                    {
+                        "name": "auth",
+                        "in": "query",
+                        "required": true,
+                        "schema": { "type": "string" },
+                        "description": "API key for authentication"
                     }
                 ],
                 "responses": {
@@ -602,12 +619,20 @@
             "get": {
                 "tags": ["Generate"],
                 "summary": "Delete generation by ID",
+                "security": [],
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
                         "required": true,
                         "schema": { "type": "string" }
+                    },
+                    {
+                        "name": "auth",
+                        "in": "query",
+                        "required": true,
+                        "schema": { "type": "string" },
+                        "description": "API key for authentication"
                     }
                 ],
                 "responses": {

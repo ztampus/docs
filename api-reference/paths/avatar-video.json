@@ -105,6 +105,7 @@
             "get": {
                 "tags": ["Avatar Videos"],
                 "summary": "Get all avatar videos",
+                "security": [],
                 "parameters": [
                     {
                         "name": "id",
@@ -119,6 +120,13 @@
                         "required": false,
                         "schema": { "type": "string" },
                         "example": "createdate desc"
+                    },
+                    {
+                        "name": "auth",
+                        "in": "query",
+                        "required": true,
+                        "schema": { "type": "string" },
+                        "description": "API key for authentication"
                     }
                 ],
                 "responses": {
@@ -160,6 +168,7 @@
             "get": {
                 "tags": ["Avatar Video"],
                 "summary": "Get avatar video by id",
+                "security": [],
                 "parameters": [
                     {
                         "name": "id",
@@ -174,6 +183,12 @@
                         "required": true,
                         "schema": { "type": "string" },
                         "example": "123"
+                    } ,{
+                        "name": "auth",
+                        "in": "query",
+                        "required": true,
+                        "schema": { "type": "string" },
+                        "description": "API key for authentication"
                     }
                 ],
                 "responses": {
@@ -306,6 +321,7 @@
             "get": {
                 "tags": ["Avatar Video"],
                 "summary": "Delete avatar video by id",
+                "security": [],
                 "parameters": [
                     {
                         "name": "id",
@@ -320,6 +336,13 @@
                         "required": true,
                         "schema": { "type": "string" },
                         "example": "123"
+                    },
+                    {
+                        "name": "auth",
+                        "in": "query",
+                        "required": true,
+                        "schema": { "type": "string" },
+                        "description": "API key for authentication"
                     }
                 ],
                 "responses": {

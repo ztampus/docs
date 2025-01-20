@@ -105,6 +105,7 @@
             "get": {
                 "tags": ["Avatar"],
                 "summary": "Get all avatars",
+                "security": [],
                 "parameters": [
                     {
                         "name": "orderby",
@@ -112,6 +113,13 @@
                         "required": false,
                         "schema": { "type": "string" },
                         "example": "createdate desc"
+                    },
+                    {
+                        "name": "auth",
+                        "in": "query",
+                        "required": true,
+                        "schema": { "type": "string" },
+                        "description": "API key for authentication"
                     }
                 ],
                 "responses": {
@@ -157,6 +165,7 @@
             "get": {
                 "tags": ["Avatar"],
                 "summary": "Get avatar by id",
+                "security": [],
                 "parameters": [
                     {
                         "name": "id",
@@ -164,6 +173,13 @@
                         "required": true,
                         "schema": { "type": "string" },
                         "example": "123"
+                    },
+                    {
+                        "name": "auth",
+                        "in": "query",
+                        "required": true,
+                        "schema": { "type": "string" },
+                        "description": "API key for authentication"
                     }
                 ],
                 "responses": {
@@ -207,6 +223,7 @@
             "delete": {
                 "tags": ["Avatar"],
                 "summary": "Delete avatar by id",
+                "security": [],
                 "parameters": [
                     {
                         "name": "id",
@@ -214,6 +231,13 @@
                         "required": true,
                         "schema": { "type": "string" },
                         "example": "123"
+                    },
+                    {
+                        "name": "auth",
+                        "in": "query",
+                        "required": true,
+                        "schema": { "type": "string" },
+                        "description": "API key for authentication"
                     }
                 ],
                 "responses": {
@@ -351,6 +375,7 @@
             "get": {
                 "tags": ["Avatar"],
                 "summary": "Delete avatar by id",
+                "security": [],
                 "parameters": [
                     {
                         "name": "id",
@@ -358,6 +383,13 @@
                         "required": true,
                         "schema": { "type": "string" },
                         "example": "123"
+                    },
+                    {
+                        "name": "auth",
+                        "in": "query",
+                        "required": true,
+                        "schema": { "type": "string" },
+                        "description": "API key for authentication"
                     }
                 ],
                 "responses": {
