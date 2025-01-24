@@ -32,6 +32,7 @@
                                     "required": ["action", "audioid"],
                                 "oneOf": [
                                     {
+                                        "title": "Create",
                                         "properties": {
                                             "action": {
                                                 "type": "string",
@@ -41,6 +42,7 @@
                                         }
                                     },
                                     {
+                                        "title": "Update",
                                         "properties": {
                                             "action": {
                                                 "type": "string",

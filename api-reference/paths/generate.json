@@ -32,17 +32,19 @@
                                 "required": ["action", "videoid"],
                                 "oneOf": [
                                     {
+                                        "title": "Create",
                                         "properties": {
                                             "action": { 
                                                 "type": "string",
                                                 "enum": ["create"]
                                             },
                                             "name": { "type": "string" },
-                                            "text": { "type": "string" },
+                                            "audioid": { "type": "string" },
                                             "videoid": { "type": "string" }
                                         }
                                     },
                                     {
+                                        "title": "Update",
                                         "properties": {
                                             "action": { 
                                                 "type": "string",
@@ -50,7 +52,10 @@
                                             },
                                             "id": { "type": "string" },
                                             "name": { "type": "string" },
-                                            "text": { "type": "string" },
+                                            
+                                            "voiceid": { "type": "string" },
+                                            "audioid": { "type": "string" },
+
                                             "videoid": { "type": "string" }
                                         },
                                         "required": ["id"]
@@ -111,7 +116,8 @@
                         "in": "query",
                         "required": true,
                         "schema": { "type": "string" },
-                        "description": "API key for authentication"
+                        "description": "API key for authentication",
+                        "example": "<authtoken>"
                     }
                   
                 ],
