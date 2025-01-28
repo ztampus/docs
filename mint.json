@@ -62,7 +62,7 @@
         {
             "group": "Avatar Video",
             "pages": [
-                "api-reference/endpoint/avatar-video/create",
+                
                 "api-reference/endpoint/avatar-video/get-by-id",
                 "api-reference/endpoint/avatar-video/get-all",
                 "api-reference/endpoint/avatar-video/delete-by-id"
@@ -71,7 +71,7 @@
         {
             "group": "Avatar Audio",
             "pages": [
-                "api-reference/endpoint/avatar-audio/create",
+              
                 "api-reference/endpoint/avatar-audio/get-by-id",
                 "api-reference/endpoint/avatar-audio/get-all",
                 "api-reference/endpoint/avatar-audio/delete-by-id"
